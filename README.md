@@ -1,4 +1,4 @@
 Translaterino
 =============
 
-A texterino translaterino into the -ERINO languagerino
+A texterino translaterino into the Erino languagerino
