@@ -1,2 +1,43 @@
+/* @name stylerino.css 
+ / @author William Xie
+ / #
+ / @desc Stylesheet for Translaterino
+ / -------------------------------------------------------
+*/
+
+/* Title and Header */
+.top {
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+#main-title {
+	font-size: 48px;
+}
+
+#description {
+	font-size: 18px;
+}
+
+/* Input/Output Content */
+.content {
+	text-align: center;
+}
+
+.input-area {
+
+}
+
+#text-input {
+	width: 400px;
+}
 
 
+.output-area {
+	text-align: center;
+	height: 400px;
+}
+
+#text-output {
+	width: 400px;
+}
