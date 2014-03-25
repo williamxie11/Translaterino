@@ -3,22 +3,31 @@
 	<head>
 		<title>Translaterino</title>
 		<link href="stylerino.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	</head>
 	<body>
 		<div class="top">
 			<div id="main-title">Translaterino</div>
 			<div id="description">A tool for translating between English and Erino</div>
+			<div id="whatis"><a href="#" style="text-decoration: none">What is Erino?</a></div>
 		</div>
 		<div class="content">
 			<div class="input-area">
-				<textarea id="text-input" rows="10" data-bind="value: $root.line"></textarea>
+				<div>
+					<textarea id="text-input" rows="10">Insert text to translate here ...</textarea>
+				</div>
+				<div>
+					<input type="button" class="btn btn-primary btn-small" value="Translate" data-bind="click: translateLine()"\>
+				</div>
 			</div>
-			<div class="output-area" data-bind="text: displayLine()">
+			<hr width="75%">
+			<div class="output-area">
+				<div id="text-output" rows="10" data-bind="text: getLine()"></div>
 			</div>
 		</div>
-		<!-- Scripts -->
+		<!-- Move Scripts Here for Faster Loading Later -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 		<script type="text/javascript" src="erino.js"></script>
 	</body>
