@@ -119,6 +119,9 @@ function translateModel() {
 		if ("'s" == word.substring(word.length - 2, word.length)) {
 			return self.handleWord(word.substring(0, word.length - 2)) + "'s";
 		}
+		else if ("y" == word.charAt(word.length - 1)) {
+			return word.substring(0, word.length - 1) + "ierino";
+		}
 		else if (word != self.handleIng(w)) {
 			return self.handleIng(w);
 		}
