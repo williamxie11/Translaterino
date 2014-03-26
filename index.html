@@ -6,26 +6,29 @@
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	</head>
 	<body>
+		<!-- Title Header -->
 		<div class="top">
 			<div id="main-title">Translaterino</div>
 			<div id="description">A tool for translating between English and Erino</div>
 			<div id="whatis"><a href="#" style="text-decoration: none">What is Erino?</a></div>
 		</div>
+		<!-- Translation Body -->
 		<div class="content">
 			<div class="input-area">
 				<div>
-					<textarea id="text-input" rows="10">Insert text to translate here ...</textarea>
+					<textarea id="text-input" rows="10"></textarea>
 				</div>
 				<div>
-					<input type="button" class="btn btn-primary btn-small" value="Translate" data-bind="click: translateLine()"\>
+					<input type="button" class="btn btn-primary btn-small" value="Translaterino" data-bind="click: translateToErino"></input>
 				</div>
 			</div>
-			<hr width="75%">
+			<hr width="85%">
 			<div class="output-area">
 				<div id="text-output" rows="10" data-bind="text: getLine()"></div>
 			</div>
+			<hr width="85%">
 		</div>
-		<!-- Move Scripts Here for Faster Loading Later -->
+		<!-- Scripts at the Bottom for Faster Loading -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>

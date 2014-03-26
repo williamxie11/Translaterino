@@ -28,19 +28,12 @@
 	text-align: center;
 }
 
-.input-area {
-
-}
-
 #text-input {
 	width: 400px;
 }
 
-
-.output-area {
-	text-align: center;
-}
-
 #text-output {
 	height: auto;
+	padding-left: 5%;
+	padding-right: 5%;
 }
