@@ -24,7 +24,7 @@ function translateModel() {
 	self.prepositions = ["aboard", "about", "above", "across", "after", "against",
 			"along", "amid", "among", "anti", "around", "as", "at", "before", 
 			"behind", "below", "beneath", "beside", "besides", "between",
-			"beyond", "but", "by", "despite", "down", "except", "for", "from",
+			"beyond", "but", "by", "during", "despite", "down", "except", "for", "from",
 			"in", "inside", "into", "like", "minus", "near", "of", "off", "on", 
 			"onto", /*"opposite"*/, /*"outside"*/, "over", "past", "per", "plus", 
 			"round", /*"save"*/, "since", "than", "through", "to", "toward", 
@@ -45,13 +45,16 @@ function translateModel() {
 
 	// Articles, pronouns, and other things omitted
 	self.articles = ["i", "a", "is", "am", "are", "was", "were", "be", "being", "been", 
-			"have", "had", "having", "me", "he", "him", "she", "her", "it", "here",
+			"have", "had", "having", "me", "he", "him", "she", "her", "it", "its", "here",
 			"the", "this", "that", "these", "those", "there", "their", "than", "then",
 			"you"];
 
 	// Other omissions 
 	// Add more as necessary
-	self.other = ["erino", "just", "not", "or"];
+	self.other = ["erino", "just", "not", "or", "what", "will", "more", "most", "less", "least"];
+
+	// Need omission for numbers
+	// Need omission for punctuation
 
 	// -------------------------------------------------------
 
