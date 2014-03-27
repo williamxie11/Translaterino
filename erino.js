@@ -44,14 +44,14 @@ function translateModel() {
 			"you're", "you've"];
 
 	// Articles, pronouns, and other things omitted
-	self.articles = ["is", "am", "are", "was", "were", "be", "being", "been", 
+	self.articles = ["i", "a", "is", "am", "are", "was", "were", "be", "being", "been", 
 			"have", "had", "having", "me", "he", "him", "she", "her", "it", "here",
 			"the", "this", "these", "those", "there", "their", "than", "then",
 			"you"];
 
 	// Other omissions 
 	// Add more as necessary
-	self.other = ["erino"]
+	self.other = ["erino", "just"]
 
 	// -------------------------------------------------------
 
@@ -102,7 +102,7 @@ function translateModel() {
 				self.newLine(self.newLine() + self.word() + " ");
 			}
 			// Check if there are any words remaining
-			if ('' == self.line()) {
+			if ('' == self.line().trim()) {
 				wordsLeft = false;
 			}
 		};
@@ -116,7 +116,8 @@ function translateModel() {
 	// TODO: 
 		// 1) All caps handling
 		// 2) Punctuation handling
-	
+		// 3) Bug in -ing involving vowels (ex: treeing should be treerinoing not treeerinoing)
+		// 4) Bug in -ing involving y's (ex: busying should be busierinoing)
 
 	// NOTE: substring(inclusive start, exclusive end)
 
@@ -124,6 +125,7 @@ function translateModel() {
 	self.handleWord = function(w) {
 		//console.log("Handling Word ...");
 		word = w;
+		simple = false;
 		// Apostrophe s (possession & contraction)
 		if ("'s" == word.substring(word.length - 2, word.length)) {
 			return self.handleWord(word.substring(0, word.length - 2)) + "'s";
@@ -157,18 +159,15 @@ function translateModel() {
 		if (word != wcheck) {
 			return wcheck;
 		}
-		else {
-			//console.log("Converting normally ...");
-			return w + "erino";
-		}
+		// Basic appending -erino
+		return w + "erino";
 	};
 
 	// -ing word handler helper function
 	self.handleIng = function(w) {
 		length = w.length;
 		if ("ing" == w.substring(length - 3, length)) {
-			//console.log("Converting -ing ...")
-			return self.handleVowel(w.substring(0, length - 3)) + "ing";
+			return w.substring(0, length - 3) + "erinoing";
 		}
 		return w;
 	};

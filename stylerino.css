@@ -23,6 +23,10 @@
 	font-size: 14px;
 }
 
+#warning {
+	font-size: 11px;
+}
+
 /* Input/Output Content */
 .content {
 	text-align: center;
