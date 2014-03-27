@@ -46,12 +46,12 @@ function translateModel() {
 	// Articles, pronouns, and other things omitted
 	self.articles = ["i", "a", "is", "am", "are", "was", "were", "be", "being", "been", 
 			"have", "had", "having", "me", "he", "him", "she", "her", "it", "here",
-			"the", "this", "these", "those", "there", "their", "than", "then",
+			"the", "this", "that", "these", "those", "there", "their", "than", "then",
 			"you"];
 
 	// Other omissions 
 	// Add more as necessary
-	self.other = ["erino", "just"]
+	self.other = ["erino", "just", "not", "or"];
 
 	// -------------------------------------------------------
 
