@@ -51,7 +51,7 @@ function translateModel() {
 
 	// Other omissions 
 	// Add more as necessary
-	self.other = ["erino", "just", "not", "or", "what", "will", "more", "most", "less", "least"];
+	self.other = ["erino", "just", "not", "or", "what", "will"];
 
 	// Need omission for numbers
 	// Need omission for punctuation
