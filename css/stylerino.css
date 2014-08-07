@@ -1,0 +1,71 @@
+/*     
+*                stylerino.css         
+*       Stylesheet for Translaterino
+*                 William Xie
+ */
+
+/* Title and Header */
+.top {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#main-title {
+	color: #000;
+	font-family: Lato-Light;
+	font-size: 56px;
+	text-transform: uppercase;
+}
+
+#description {
+	font-family: Lato;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+#whatis {
+	padding-top: 10px;
+	font-family: Lato-Light;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+#whatis a {
+	font-color: #3498db;
+}
+
+#whatis a:hover {
+	font-weight: bold;
+}
+
+#whatis a:visited {
+	font-color: #3498db;
+}
+
+/* Input/Output Content */
+.content {
+	text-align: center;
+}
+
+#text-input {
+	width: 400px;
+	max-width: 600px;
+}
+
+#text-output {
+	height: auto;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: Lato-Light;
+	src: url(../fonts/Lato/Lato-Lig.ttf);
+}
+
+@font-face {
+	font-family: Lato;
+	src: url(../fonts/Lato/Lato-Reg.ttf);
+}
