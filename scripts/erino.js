@@ -5,7 +5,7 @@
  */
 
 //  #############################
-//	#	   Omitted English      #
+//	 #	     Omitted English      #
 //  #############################
 
 /*
@@ -92,12 +92,26 @@ function translaterino() {
       // Omit non-translatable words
       var word = wordsList[i];
       if (!shouldOmit(word)) {
-         newWord = toErino(word);
-         wordsList[i] = newWord; 
+         var newWord = "";
+         // Punctuation check (this needs to handle more than just common punctuation later)
+         if (word.slice(-1) === "." || word.slice(-1) === "," || word.slice(-1) === "!") {
+            var punct = word.slice(-1);
+            newWord = toErino(word.slice(0, -1));
+            wordsList[i] = newWord + punct;
+         }
+         else {
+            newWord = toErino(word);
+            wordsList[i] = newWord; 
+         }
       }
    }
-   console.log(wordsList);
-   //document.getElementById("text-output").innerHTML = wordsList;
+
+   // Output translation
+   //console.log(wordsList);
+   var output = document.getElementById("text-output");
+   for (var w in wordsList) {
+      output.innerHTML += wordsList[w] + " ";
+   }
 }
 
 /* Single word translation function
@@ -105,18 +119,50 @@ function translaterino() {
  * Handles Erino grammar and decides which 
  */
 function toErino(word) {
-   // Check for punctuation 
+   var last = word.slice(-1);
+   var lastTwo = word.slice(-2);
+   var lastThree = word.slice(-3);
 
+   // Common character ending translations
+   if (last === "s" || last === "y" || last === "e") {
+      return charTranslate(word);   
+   }
    // -ing words
-   if (word.slice(-3) == "ing") {
+   if (lastThree === "ing") {
       return ingTranslate(word);
    }
    // -ed words
-   if (word.slice(-2) == "ed") {
+   if (lastTwo === "ed") {
       return edTranslate(word);
    }
    // TODO: Other erino translation words
    return word + "erino";
+}
+/* Erino Translation for common endings of words including: 
+ * -s, -es, -y, -e, -ee
+ */
+function charTranslate(word) {
+   var root = "";
+   var last = word.slice(-1);
+   var secondLast = word.slice(-2, -1);
+   var lastTwo = word.slice(-2);
+
+   if (last === "s") {
+      if (secondLast === "e") {
+         root = word.slice(0, -2)
+      }
+      else {
+         root = word.slice(0, -1);
+      }
+      return root + "erinos";
+   }
+   if (last === "y") {
+      root = word.slice(0, -1);
+      return root + "ierino";
+   }
+   if (last === "e" || last === "ee") {
+      return word + "rino";
+   }
 }
 
 /* Erino Translation for -ing 
