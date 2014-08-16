@@ -5,11 +5,11 @@
  */
 
 //  #############################
-//	 #	     Omitted English      #
+//  #       Omitted English     #
 //  #############################
 
 /*
-	TODO: 
+	TODO for Grammar: 
 		Leg = Leggerino
 		Met = Metterino
 		Martyr = Marterino
@@ -32,7 +32,7 @@ self.prepositions = ["aboard", "about", "above", "across", "after", "against",
 self.articles = ["i", "a", "is", "am", "are", "was", "were", "be", "being", "been", 
 			"have", "had", "having", "me", "he", "him", "she", "her", "it", "its", "here",
 			"the", "this", "that", "these", "those", "there", "their", "than", "then",
-			"you"];
+			"you", "your"];
 
 // Other omissions - add more as necessary
 self.other = ["erino", "just", "not", "or", "what", "will"];
@@ -47,6 +47,67 @@ if (tClicked.addEventListener) {
 else {
    tClicked.attachEvent("onclick", translaterino);
 }
+
+/* Link click listeners */
+var originLink = document.getElementById("origin-link");
+if (originLink.addEventListener) {
+   originLink.addEventListener("click", function() { 
+      toggle("origin") 
+   }, false);
+}
+else {
+   originLink.attachEvent("onclick", function() { 
+      toggle("origin")
+   });
+}
+
+var grammarLink = document.getElementById("grammar-link");
+if (grammarLink.addEventListener) {
+   grammarLink.addEventListener("click", function() { 
+      toggle("grammar")
+   }, false);
+}
+else {
+   grammarLink.attachEvent("onclick", function() {
+      toggle("grammar");
+   });
+}
+
+var litLink = document.getElementById("literature-link");
+if (litLink.addEventListener) {
+   litLink.addEventListener("click", function() { 
+      toggle("literature");
+   }, false);
+}
+else {
+   litLink.attachEvent("onclick", function() {
+      toggle("literature");
+   });
+}
+
+/* Hide/show toggle function
+ * 
+ * 
+ */
+ function toggle(ele) {
+   var tag = document.getElementById(ele);
+   if (tag.style.display === 'none') {
+      hideAll();
+      tag.style.display = 'block';
+   }
+   else {
+      hideAll();
+   }
+ }
+
+ function hideAll() {
+   var og = document.getElementById('origin');
+   var gr = document.getElementById('grammar');
+   var li = document.getElementById('literature');
+   og.style.display = 'none';
+   gr.style.display = 'none';
+   li.style.display = 'none'; 
+ }
 
 /* Omission checking function
  *
@@ -85,6 +146,7 @@ function shouldOmit(word) {
  * 
  */
 function translaterino() {
+   document.getElementById('output-title').style.display = 'block';
    var text = document.getElementById("text-input").value;
    var wordsList = text.split(' ');
 
@@ -94,7 +156,7 @@ function translaterino() {
       if (!shouldOmit(word)) {
          var newWord = "";
          // Punctuation check (this needs to handle more than just common punctuation later)
-         if (word.slice(-1) === "." || word.slice(-1) === "," || word.slice(-1) === "!") {
+         if (word.slice(-1) === "." || word.slice(-1) === "," || word.slice(-1) === "!" || word.slice(-1) === "\n") {
             var punct = word.slice(-1);
             newWord = toErino(word.slice(0, -1));
             wordsList[i] = newWord + punct;
@@ -109,6 +171,7 @@ function translaterino() {
    // Output translation
    //console.log(wordsList);
    var output = document.getElementById("text-output");
+   output.innerHTML = "";
    for (var w in wordsList) {
       output.innerHTML += wordsList[w] + " ";
    }
@@ -187,4 +250,10 @@ function charTranslate(word) {
     return root + "erinoed";
  }
 
+window.onload = function() {
+   document.getElementById('output-title').style.display = 'none';
+   document.getElementById('origin').style.display = 'none';
+   document.getElementById('grammar').style.display = 'none';
+   document.getElementById('literature').style.display = 'none';
+};
  

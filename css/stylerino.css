@@ -8,6 +8,7 @@
 .top {
 	text-align: center;
 	padding-bottom: 10px;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 #main-title {
@@ -19,31 +20,72 @@
 
 #description {
 	font-family: Lato;
-	font-size: 18px;
+	font-size: 15px;
 	text-transform: uppercase;
 }
 
-#whatis {
-	padding-top: 10px;
+.help-nav {	
+	margin: 0 auto;
+	padding: 0;
+
 	font-family: Lato-Light;
 	font-size: 16px;
+	list-style-type: none;
+	text-align: center;
 	text-transform: uppercase;
 }
 
-#whatis a {
-	font-color: #3498db;
+.help-nav li {
+	display: inline-block;
+	padding: 10px;
 }
 
-#whatis a:hover {
-	font-weight: bold;
+.help-nav li a {
+	padding: 5px;
+	text-decoration: none;
 }
 
-#whatis a:visited {
-	font-color: #3498db;
+.help-nav li a:hover {
+	border-bottom: 1px solid #999;
+	cursor: pointer;
+}
+
+/* Link Content */
+
+.link-content {
+	padding-left: 20%;
+	padding-right: 20%;
+
+	font-family: Lato-Light;
+	font-size: 16px;
+}
+
+.lit-list {
+	list-style-type: none;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.lit-list li {
+	display: list-item;
+}
+
+.lit-list li a {
+	text-decoration: none;
+}
+
+#lebowski {
+	text-decoration: none;
+}
+
+.pillar {
+	margin: 0;
+	padding: 0;
 }
 
 /* Input/Output Content */
 .content {
+	margin-top: 25px;
 	text-align: center;
 }
 
@@ -66,7 +108,7 @@
 	margin-left: 15%;
 	margin-right: 15%;
 
-	font-family: Lato-Light;
+	font-family: Lato;
 	font-size: 18px;
 }
 
