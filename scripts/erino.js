@@ -73,18 +73,6 @@ else {
    });
 }
 
-var litLink = document.getElementById("literature-link");
-if (litLink.addEventListener) {
-   litLink.addEventListener("click", function() { 
-      toggle("literature");
-   }, false);
-}
-else {
-   litLink.attachEvent("onclick", function() {
-      toggle("literature");
-   });
-}
-
 /* Hide/show toggle function
  * 
  * 
@@ -103,10 +91,8 @@ else {
  function hideAll() {
    var og = document.getElementById('origin');
    var gr = document.getElementById('grammar');
-   var li = document.getElementById('literature');
    og.style.display = 'none';
    gr.style.display = 'none';
-   li.style.display = 'none'; 
  }
 
 /* Omission checking function
@@ -254,6 +240,5 @@ window.onload = function() {
    document.getElementById('output-title').style.display = 'none';
    document.getElementById('origin').style.display = 'none';
    document.getElementById('grammar').style.display = 'none';
-   document.getElementById('literature').style.display = 'none';
 };
  
